@@ -3,23 +3,30 @@
         xmlns:tools="http://schemas.android.com/tools"
         tools:showIn="navigation_view">
 
-    <group
-            android:id="@+id/nav_feeds"
-            android:checkableBehavior="single">
-        <item
-                android:id="@+id/nav_home"
-                android:icon="@drawable/ic_nav_home"
-                android:title="@string/menu_home" />
-        <item
-                android:id="@+id/nav_all"
-                android:icon="@drawable/ic_nav_all"
-                android:title="@string/menu_all" />
-        <item
-                android:id="@+id/nav_trending"
-                android:icon="@drawable/ic_nav_trending"
-                android:title="@string/menu_trending" />
-    </group>
-    <group android:id="@+id/nav_guilds">
-        <item android:title="Item" />
-    </group>
+    <item android:title="@string/menu_ruqqus_feeds">
+        <menu>
+            <group
+                    android:id="@+id/nav_group_feeds"
+                    android:checkableBehavior="single">
+                <item
+                        android:id="@+id/nav_home"
+                        android:icon="@drawable/ic_nav_home"
+                        android:title="@string/menu_home" />
+                <item
+                        android:id="@+id/nav_all"
+                        android:icon="@drawable/ic_nav_all"
+                        android:title="@string/menu_all" />
+                <item
+                        android:id="@+id/nav_trending"
+                        android:icon="@drawable/ic_nav_trending"
+                        android:title="@string/menu_trending" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:id="@+id/nav_item_guilds" android:title="@string/menu_guilds">
+        <menu>
+            <group android:id="@+id/nav_group_guilds"/>
+        </menu>
+    </item>
 </menu>
