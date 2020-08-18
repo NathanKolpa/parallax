@@ -1,2 +1,4 @@
+include ':parallaxcore'
+include ':parallaxlib'
 include ':app'
 rootProject.name = "Parallax"

@@ -24,6 +24,7 @@
         </menu>
     </item>
 
+
     <item android:id="@+id/nav_item_guilds" android:title="@string/menu_guilds">
         <menu>
             <group android:id="@+id/nav_group_guilds"/>

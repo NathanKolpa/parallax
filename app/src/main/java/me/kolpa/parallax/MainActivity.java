@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity
 
 	private void configureDrawerMenu(Menu drawerMenu)
 	{
-		SubMenu guilds = drawerMenu.findItem(R.id.nav_item_guilds).getSubMenu();
+		SubMenu guildList = drawerMenu.findItem(R.id.nav_item_guilds).getSubMenu();
 
-		guilds.add("test");
+		guildList.add("test");
 	}
 }
