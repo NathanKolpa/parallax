@@ -9,15 +9,27 @@
             android:id="@+id/nav_home"
             android:name="me.kolpa.parallax.ui.feed.FeedFragment"
             android:label="@string/menu_home"
-            tools:layout="@layout/fragment_home" />
+            tools:layout="@layout/fragment_home">
+        <deepLink
+                android:id="@+id/deepLink"
+                app:uri="https://ruqqus.com" />
+    </fragment>
     <fragment
             android:id="@+id/nav_trending"
             android:name="me.kolpa.parallax.ui.feed.FeedFragment"
-            android:label="@string/menu_trending" />
+            android:label="@string/menu_trending">
+        <deepLink
+                android:id="@+id/deepLink3"
+                app:uri="https://ruqqus.com/all?sort=new" />
+    </fragment>
 
     <fragment
             android:id="@+id/nav_all"
             android:name="me.kolpa.parallax.ui.feed.FeedFragment"
-            android:label="@string/menu_all" />
+            android:label="@string/menu_all">
+        <deepLink
+                android:id="@+id/deepLink2"
+                app:uri="https://ruqqus.com/all?sort=new" />
+    </fragment>
 
 </navigation>

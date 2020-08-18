@@ -21,17 +21,17 @@ public class Guild
 		return "+" + getName();
 	}
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-
 	public int getSubscriberCount()
 	{
 		return subscriberCount;
 	}
 
-	public void setSubscriberCount(int subscriberCount)
+	private void setName(String name)
+	{
+		this.name = name;
+	}
+
+	private void setSubscriberCount(int subscriberCount)
 	{
 		this.subscriberCount = subscriberCount;
 	}

@@ -14,6 +14,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import me.kolpa.parallaxcore.domain.entities.Guild;
+import me.kolpa.parallaxinfrastructure.service.http.HttpApiClient;
+import me.kolpa.parallaxinfrastructure.service.http.v1.RuqqusApiV1GuildService;
+
 public class MainActivity extends AppCompatActivity
 {
 
@@ -58,6 +62,11 @@ public class MainActivity extends AppCompatActivity
 	{
 		SubMenu guildList = drawerMenu.findItem(R.id.nav_item_guilds).getSubMenu();
 
+		guildList.add("test");
+		guildList.add("test");
+		guildList.add("test");
+		guildList.add("test");
+		guildList.add("test");
 		guildList.add("test");
 	}
 }

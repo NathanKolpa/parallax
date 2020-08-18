@@ -1,0 +1,10 @@
+ext {
+
+    versions = [
+            "rxjava3": "3.0.5"
+    ]
+
+    rxjava3 = [
+            rxjava3: "io.reactivex.rxjava3:rxjava:${versions.rxjava3}"
+    ]
+}
