@@ -14,8 +14,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-import me.kolpa.parallaxcore.domain.entities.Guild;
 import me.kolpa.parallaxinfrastructure.service.http.HttpApiClient;
+import me.kolpa.parallaxinfrastructure.service.http.JsonSerializer;
 import me.kolpa.parallaxinfrastructure.service.http.v1.RuqqusApiV1GuildService;
 
 public class MainActivity extends AppCompatActivity
