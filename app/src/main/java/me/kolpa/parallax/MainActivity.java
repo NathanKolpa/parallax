@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity
 
 		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		NavigationView navigationView = findViewById(R.id.nav_view);
+		navigationView.setCheckedItem(R.id.nav_home);
 
 		Menu drawerMenu = navigationView.getMenu();
 		configureDrawerMenu(drawerMenu);

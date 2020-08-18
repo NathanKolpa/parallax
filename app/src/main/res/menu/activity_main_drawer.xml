@@ -3,6 +3,27 @@
         xmlns:tools="http://schemas.android.com/tools"
         tools:showIn="navigation_view">
 
+    <item
+            android:id="@+id/nav_item_user"
+            android:title="@string/menu_user">
+        <menu>
+            <group>
+                <item
+                        android:id="@+id/nav_profile"
+                        android:icon="@drawable/ic_nav_profile"
+                        android:title="@string/nav_profile" />
+                <item
+                        android:id="@+id/nav_inbox"
+                        android:icon="@drawable/ic_nav_inbox"
+                        android:title="@string/nav_inbox" />
+                <item
+                        android:id="@+id/nav_prefs"
+                        android:icon="@drawable/ic_nav_prefs"
+                        android:title="@string/nav_prefs" />
+            </group>
+        </menu>
+    </item>
+
     <item android:title="@string/menu_ruqqus_feeds">
         <menu>
             <group
@@ -24,10 +45,11 @@
         </menu>
     </item>
 
-
-    <item android:id="@+id/nav_item_guilds" android:title="@string/menu_guilds">
+    <item
+            android:id="@+id/nav_item_guilds"
+            android:title="@string/menu_guilds">
         <menu>
-            <group android:id="@+id/nav_group_guilds"/>
+            <group android:id="@+id/nav_group_guilds" />
         </menu>
     </item>
 </menu>

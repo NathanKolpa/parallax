@@ -15,4 +15,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_trending">Trending</string>
     <string name="menu_all">All</string>
+    <string name="menu_user">User</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_inbox">Inbox</string>
+    <string name="nav_prefs">Preferences</string>
 </resources>
