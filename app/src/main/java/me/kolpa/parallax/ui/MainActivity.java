@@ -1,4 +1,4 @@
-package me.kolpa.parallax;
+package me.kolpa.parallax.ui;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,18 +14,25 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-import me.kolpa.parallaxinfrastructure.service.http.HttpApiClient;
-import me.kolpa.parallaxinfrastructure.service.http.JsonSerializer;
-import me.kolpa.parallaxinfrastructure.service.http.v1.RuqqusApiV1GuildService;
+import javax.inject.Inject;
+
+import io.reactivex.rxjava3.disposables.Disposable;
+import me.kolpa.parallax.R;
+import me.kolpa.parallax.di.MyApplication;
+import me.kolpa.parallaxcore.domain.repository.GuildRepository;
 
 public class MainActivity extends AppCompatActivity
 {
-
 	private AppBarConfiguration mAppBarConfiguration;
+
+	@Inject
+	GuildRepository reactiveGuildRepository;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		((MyApplication) getApplicationContext()).appComponent.inject(this);
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		Toolbar toolbar = findViewById(R.id.toolbar);
@@ -68,5 +75,12 @@ public class MainActivity extends AppCompatActivity
 		guildList.add("test");
 		guildList.add("test");
 		guildList.add("test");
+
+		Disposable disposable = reactiveGuildRepository.getGuild("ClownWorld")
+				.subscribe(guild -> {
+					System.out.println("Yeet Guild: " + guild.getFullName() + " Subs: " + guild.getSubscriberCount());
+				});
+
+		reactiveGuildRepository.fetchGuild("Clownworld").subscribe(() -> System.out.println("Yeet"));
 	}
 }
