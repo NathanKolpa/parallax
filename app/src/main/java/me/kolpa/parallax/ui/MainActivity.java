@@ -75,12 +75,5 @@ public class MainActivity extends AppCompatActivity
 		guildList.add("test");
 		guildList.add("test");
 		guildList.add("test");
-
-		Disposable disposable = reactiveGuildRepository.getGuild("ClownWorld")
-				.subscribe(guild -> {
-					System.out.println("Yeet Guild: " + guild.getFullName() + " Subs: " + guild.getSubscriberCount());
-				});
-
-		reactiveGuildRepository.fetchGuild("Clownworld").subscribe(() -> System.out.println("Yeet"));
 	}
 }
