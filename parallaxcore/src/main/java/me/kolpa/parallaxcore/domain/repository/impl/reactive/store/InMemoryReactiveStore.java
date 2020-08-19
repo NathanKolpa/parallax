@@ -30,7 +30,13 @@ public class InMemoryReactiveStore<Key, Value> implements ReactiveStore<Key, Val
 	{
 		for (Value value : values)
 		{
-			internalValues.put(getKeyCallback.getKey(value), value);
+			Key key = getKeyCallback.getKey(value);
+
+			internalValues.put(key, value);
+			if (!subjectMap.containsKey(key))
+			{
+				createAndStoreNewSubjectForKey(key);
+			}
 		}
 
 		updateObservable();
