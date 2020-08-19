@@ -16,17 +16,16 @@ import com.google.android.material.navigation.NavigationView;
 
 import javax.inject.Inject;
 
-import io.reactivex.rxjava3.disposables.Disposable;
 import me.kolpa.parallax.R;
 import me.kolpa.parallax.di.MyApplication;
-import me.kolpa.parallaxcore.domain.repository.GuildRepository;
+import me.kolpa.parallaxcore.domain.usecases.guild.GetGuildsInteractor;
 
 public class MainActivity extends AppCompatActivity
 {
 	private AppBarConfiguration mAppBarConfiguration;
 
 	@Inject
-	GuildRepository reactiveGuildRepository;
+	GetGuildsInteractor getGuildsInteractor;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -75,5 +74,6 @@ public class MainActivity extends AppCompatActivity
 		guildList.add("test");
 		guildList.add("test");
 		guildList.add("test");
+
 	}
 }

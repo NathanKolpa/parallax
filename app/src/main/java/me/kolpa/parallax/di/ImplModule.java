@@ -12,6 +12,7 @@ import me.kolpa.parallaxcore.domain.repository.impl.reactive.ReactiveGuildReposi
 import me.kolpa.parallaxcore.domain.repository.impl.reactive.service.GuildService;
 import me.kolpa.parallaxcore.domain.repository.impl.reactive.store.InMemoryReactiveStore;
 import me.kolpa.parallaxcore.domain.repository.impl.reactive.store.ReactiveStore;
+import me.kolpa.parallaxcore.domain.usecases.guild.GetGuildsInteractor;
 import me.kolpa.parallaxinfrastructure.service.http.HttpApiClient;
 import me.kolpa.parallaxinfrastructure.service.http.JsonSerializer;
 import me.kolpa.parallaxinfrastructure.service.http.v1.RuqqusApiV1GuildService;
@@ -52,5 +53,12 @@ public class ImplModule
 	GuildRepository guildRepository(GuildService guildService, ReactiveStore<String, Guild> reactiveStore)
 	{
 		return new ReactiveGuildRepository(guildService, reactiveStore);
+	}
+
+	@Provides
+	@Singleton
+	GetGuildsInteractor getGuildsInteractor(GuildRepository guildRepository)
+	{
+		return new GetGuildsInteractor(guildRepository);
 	}
 }

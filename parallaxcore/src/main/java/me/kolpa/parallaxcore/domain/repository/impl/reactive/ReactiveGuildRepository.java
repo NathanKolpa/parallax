@@ -21,6 +21,12 @@ public class ReactiveGuildRepository implements GuildRepository
 	}
 
 	@Override
+	public boolean hasFetchedGuild(String name)
+	{
+		return store.hasValue(name);
+	}
+
+	@Override
 	public Flowable<Guild> getGuild(String name)
 	{
 		return store.getValue(name).toFlowable(BackpressureStrategy.BUFFER);

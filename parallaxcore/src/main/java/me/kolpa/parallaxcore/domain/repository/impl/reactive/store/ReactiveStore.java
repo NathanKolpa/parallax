@@ -11,6 +11,8 @@ public interface ReactiveStore<Key, Value>
 	void replaceAll(List<Value> values);
 	void setValue(Value value);
 
+	boolean hasValue(Key key);
+
 	Observable<Value> getValue(Key key);
 	Observable<List<Value>> getAll();
 }

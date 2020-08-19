@@ -12,6 +12,7 @@ import io.reactivex.rxjava3.subjects.Subject;
 
 public class InMemoryReactiveStore<Key, Value> implements ReactiveStore<Key, Value>
 {
+
 	private final GetKeyCallback<Key, Value> getKeyCallback;
 
 	private final Map<Key, Value> internalValues = new HashMap<>();
@@ -58,6 +59,12 @@ public class InMemoryReactiveStore<Key, Value> implements ReactiveStore<Key, Val
 
 		allValuesObservable.onNext(new ArrayList<>(internalValues.values()));
 		subjectMap.get(key).onNext(value);
+	}
+
+	@Override
+	public boolean hasValue(Key key)
+	{
+		return internalValues.containsKey(key);
 	}
 
 	@Override
