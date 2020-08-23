@@ -19,4 +19,13 @@
     <string name="nav_profile">Profile</string>
     <string name="nav_inbox">Inbox</string>
     <string name="nav_prefs">Preferences</string>
+
+    <string name="alt_post_thumbnail">Post thumbnail</string>
+    <string name="alt_guild_icon">Guild icon</string>
+
+    <string name="placeholder_guild">[Guild]</string>
+    <string name="placeholder_time_ago">[Time Ago]</string>
+    <string name="placeholder_author">[Author]</string>
+    <string name="placeholder_title">[Title]</string>
+    <string name="placeholder_upvotes">[Upvotes]</string>
 </resources>

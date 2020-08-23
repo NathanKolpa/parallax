@@ -17,6 +17,12 @@ public class TestPostService implements PostService
 		posts.add(new Post("2", "dasd", "asdf", 2));
 		posts.add(new Post("3", "dasd", "asdf", 3));
 		posts.add(new Post("4", "dasd", "asdf", 4));
+		posts.add(new Post("5", "dasd", "asdf", 4));
+		posts.add(new Post("6", "dasd", "asdf", 4));
+		posts.add(new Post("7", "dasd", "asdf", 4));
+		posts.add(new Post("8", "dasd", "asdf", 4));
+		posts.add(new Post("9", "dasd", "asdf", 4));
+		posts.add(new Post("0", "dasd", "asdf", 4));
 
 		return Single.just(posts);
 	}

@@ -2,10 +2,9 @@ package me.kolpa.parallax.di;
 
 import javax.inject.Singleton;
 
-import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
-import me.kolpa.parallax.VolleyHttpApiClient;
+import me.kolpa.parallax.impl.VolleyHttpApiClient;
 import me.kolpa.parallaxcore.domain.entities.Guild;
 import me.kolpa.parallaxcore.domain.entities.Post;
 import me.kolpa.parallaxcore.domain.repository.GuildRepository;
@@ -17,7 +16,7 @@ import me.kolpa.parallaxcore.domain.repository.impl.reactive.service.PostService
 import me.kolpa.parallaxcore.domain.repository.impl.reactive.store.InMemoryReactiveStore;
 import me.kolpa.parallaxcore.domain.repository.impl.reactive.store.ReactiveStore;
 import me.kolpa.parallaxcore.domain.usecases.guild.GetGuildsInteractor;
-import me.kolpa.parallaxcore.domain.usecases.post.GetPostsInteractor;
+import me.kolpa.parallaxcore.domain.usecases.post.HomeFeedInteractor;
 import me.kolpa.parallaxinfrastructure.service.http.HttpApiClient;
 import me.kolpa.parallaxinfrastructure.service.http.JsonSerializer;
 import me.kolpa.parallaxinfrastructure.service.http.v1.RuqqusApiV1GuildService;
@@ -92,8 +91,8 @@ public class ImplModule
 
 	@Provides
 	@Singleton
-	GetPostsInteractor getPostsInteractor(PostRepository postRepository)
+	HomeFeedInteractor getPostsInteractor(PostRepository postRepository)
 	{
-		return new GetPostsInteractor(postRepository);
+		return new HomeFeedInteractor(postRepository);
 	}
 }

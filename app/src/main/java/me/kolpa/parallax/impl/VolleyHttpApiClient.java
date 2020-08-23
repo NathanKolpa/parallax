@@ -1,4 +1,4 @@
-package me.kolpa.parallax;
+package me.kolpa.parallax.impl;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;

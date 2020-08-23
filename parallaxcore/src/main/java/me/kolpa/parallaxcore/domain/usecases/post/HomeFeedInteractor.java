@@ -7,11 +7,11 @@ import io.reactivex.rxjava3.core.Flowable;
 import me.kolpa.parallaxcore.domain.entities.Post;
 import me.kolpa.parallaxcore.domain.repository.PostRepository;
 
-public class GetPostsInteractor
+public class HomeFeedInteractor
 {
 	private final PostRepository postRepository;
 
-	public GetPostsInteractor(PostRepository postRepository)
+	public HomeFeedInteractor(PostRepository postRepository)
 	{
 		this.postRepository = postRepository;
 	}

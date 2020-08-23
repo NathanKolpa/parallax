@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import me.kolpa.parallaxcore.domain.entities.Post;
 import me.kolpa.parallaxcore.domain.repository.PostRepository;
@@ -39,10 +40,7 @@ public class ReactivePostRepository implements PostRepository
 	public Flowable<List<Post>> getHomeFeed()
 	{
 		return store.getAll()
-				.flatMapIterable(posts -> posts)
-				.filter(post -> homeFeedKeys.contains(post.getId()))
-				.toList()
-				.toObservable()
+				.map(posts -> Flowable.fromIterable(posts).filter(post -> homeFeedKeys.contains(post.getId())).toList().blockingGet())
 				.toFlowable(BackpressureStrategy.BUFFER);
 	}
 
@@ -50,8 +48,6 @@ public class ReactivePostRepository implements PostRepository
 	public Completable fetchHomeFeed()
 	{
 		return Completable.fromSingle(service.getHomeFeed()
-				.subscribeOn(Schedulers.io())
-				.observeOn(Schedulers.computation())
 				.doOnSuccess(posts ->
 				{
 					homeFeedKeys.clear();

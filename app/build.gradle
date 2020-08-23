@@ -11,6 +11,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        vectorDrawables.useSupportLibrary = true
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,6 +41,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     implementation rxjava3.rxjava3
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation project(':parallaxinfrastructure')
     implementation project(':parallaxcore')
 
