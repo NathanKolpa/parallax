@@ -10,7 +10,7 @@ public class PostViewEntityMapper
 {
 	public PostViewEntity mapViewEntity(Post post)
 	{
-		return new PostViewEntity(post.getId(), post.getTitle(), post.getThumbnailUrl(), post.getUpvotes());
+		return new PostViewEntity(post.getId(), post.getTitle(), post.getThumbnailUrl(), post.getUpvotes(), post.getComments());
 	}
 
 	public List<PostViewEntity> mapManyViewEntity(List<Post> posts)

@@ -6,9 +6,11 @@ public class Post
 	private String title;
 	private String thumbnailUrl;
 	private int upvotes;
+	private int comments;
 
-	public Post(String id, String title, String thumbnailUrl, int upvotes)
+	public Post(String id, String title, String thumbnailUrl, int upvotes, int comments)
 	{
+		this.comments = comments;
 		setUpvotes(upvotes);
 		setId(id);
 		setTitle(title);
@@ -35,6 +37,11 @@ public class Post
 		return upvotes;
 	}
 
+	public int getComments()
+	{
+		return comments;
+	}
+
 	private void setUpvotes(int upvotes)
 	{
 		this.upvotes = upvotes;
@@ -53,5 +60,10 @@ public class Post
 	private void setThumbnailUrl(String thumbnailUrl)
 	{
 		this.thumbnailUrl = thumbnailUrl;
+	}
+
+	private void setComments(int comments)
+	{
+		this.comments = comments;
 	}
 }

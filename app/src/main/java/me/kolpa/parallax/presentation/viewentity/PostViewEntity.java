@@ -6,12 +6,15 @@ public class PostViewEntity
 	public String title;
 	public String thumbnailUrl;
 	public int upvotes;
+	public int comments;
 
-	public PostViewEntity(String id, String title, String thumbnailUrl, int upvotes)
+
+	public PostViewEntity(String id, String title, String thumbnailUrl, int upvotes, int comments)
 	{
 		this.id = id;
 		this.title = title;
 		this.thumbnailUrl = thumbnailUrl;
 		this.upvotes = upvotes;
+		this.comments = comments;
 	}
 }

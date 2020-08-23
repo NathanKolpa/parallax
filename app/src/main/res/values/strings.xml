@@ -28,4 +28,6 @@
     <string name="placeholder_author">[Author]</string>
     <string name="placeholder_title">[Title]</string>
     <string name="placeholder_upvotes">[Upvotes]</string>
+    <string name="placeholder_comments">[Comments]</string>
+    <string name="comments">comments</string>
 </resources>

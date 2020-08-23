@@ -13,16 +13,16 @@ public class TestPostService implements PostService
 	public Single<List<Post>> getHomeFeed()
 	{
 		List<Post> posts = new ArrayList<>();
-		posts.add(new Post("1", "dasd", "asdf", 1));
-		posts.add(new Post("2", "dasd", "asdf", 2));
-		posts.add(new Post("3", "dasd", "asdf", 3));
-		posts.add(new Post("4", "dasd", "asdf", 4));
-		posts.add(new Post("5", "dasd", "asdf", 4));
-		posts.add(new Post("6", "dasd", "asdf", 4));
-		posts.add(new Post("7", "dasd", "asdf", 4));
-		posts.add(new Post("8", "dasd", "asdf", 4));
-		posts.add(new Post("9", "dasd", "asdf", 4));
-		posts.add(new Post("0", "dasd", "asdf", 4));
+		posts.add(new Post("1", "It do be like that", "asdf", 1231, 23));
+		posts.add(new Post("2", "Hmm", "asdf", 12, 12));
+		posts.add(new Post("3", "Yikes sweaty", "asdf", -32, 321));
+		posts.add(new Post("4", "Full frontal clown", "asdf", 123, 12));
+		posts.add(new Post("5", "Deuxchad", "asdf", 34, 32));
+		posts.add(new Post("6", "turtle", "asdf", 12200, 43));
+		posts.add(new Post("7", "Noooo you just can't question the narrative on reddit nooooo", "asdf", 157, 12));
+		posts.add(new Post("8", "Flowers of color", "asdf", 45, 21));
+		posts.add(new Post("9", "I got banned for saying that everyone deserves a voice", "asdf", 765, 23));
+		posts.add(new Post("0", "Fuck commies", "asdf", 10, 1));
 
 		return Single.just(posts);
 	}

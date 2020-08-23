@@ -1,5 +1,6 @@
 package me.kolpa.parallax.ui.feed;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -41,10 +42,15 @@ public class PostRecyclerViewAdapter
 
 	}
 
+	@SuppressLint("SetTextI18n")
 	@Override
 	public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
 	{
-		holder.title.setText(postViewEntities.get(position).title);
+		PostViewEntity post = postViewEntities.get(position);
+
+		holder.title.setText(post.title);
+		holder.upvotes.setText(post.upvotes + "");
+		holder.comments.setText(post.comments + "");
 	}
 
 	@Override
@@ -56,11 +62,15 @@ public class PostRecyclerViewAdapter
 	public static class MyViewHolder extends RecyclerView.ViewHolder
 	{
 		public TextView title;
+		public TextView upvotes;
+		public TextView comments;
 
 		public MyViewHolder(CardView root)
 		{
 			super(root);
 			this.title = root.findViewById(R.id.post_title);
+			this.upvotes = root.findViewById(R.id.post_upvotes);
+			this.comments = root.findViewById(R.id.post_comments);
 		}
 	}
 
