@@ -8,6 +8,7 @@ import me.kolpa.parallaxcore.domain.entities.Post;
 
 public interface PostRepository extends Repository
 {
+
 	Flowable<List<Post>> getHomeFeed();
 	Completable fetchHomeFeed();
 }

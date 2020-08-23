@@ -4,6 +4,7 @@ import java.util.List;
 
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.Single;
 import me.kolpa.parallaxcore.domain.entities.Post;
 import me.kolpa.parallaxcore.domain.repository.PostRepository;
 

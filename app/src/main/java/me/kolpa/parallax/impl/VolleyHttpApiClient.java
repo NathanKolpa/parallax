@@ -13,6 +13,7 @@ import java.net.URL;
 
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.core.SingleEmitter;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import me.kolpa.parallaxinfrastructure.service.http.HttpApiClient;
 
 public class VolleyHttpApiClient implements HttpApiClient

@@ -12,6 +12,8 @@ public class TestPostService implements PostService
 	@Override
 	public Single<List<Post>> getHomeFeed()
 	{
+		System.out.println("FETCH HOME");
+
 		List<Post> posts = new ArrayList<>();
 		posts.add(new Post("1", "It do be like that", "asdf", 1231, 23));
 		posts.add(new Post("2", "Hmm", "asdf", 12, 12));
