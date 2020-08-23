@@ -10,6 +10,8 @@ import me.kolpa.parallaxcore.domain.repository.PostRepository;
 public class HomeFeedInteractor
 {
 	private final PostRepository postRepository;
+	private boolean hasFetchedHomeFeed = false;
+	private int currentPage = 0;
 
 	public HomeFeedInteractor(PostRepository postRepository)
 	{
@@ -19,7 +21,17 @@ public class HomeFeedInteractor
 	public Flowable<List<Post>> getHomeFeed()
 	{
 		return postRepository.getHomeFeed()
-				.mergeWith(!postRepository.hasFetchedHomeFeed() ? postRepository.fetchHomeFeed() : Completable
-						.complete());
+				.mergeWith(!hasFetchedHomeFeed ? postRepository.fetchHomeFeed().doOnComplete(() ->
+				{
+					hasFetchedHomeFeed = true;
+				}) : Completable.complete());
+	}
+
+	public void setPage(int page)
+	{
+		if(page > currentPage)
+		{
+			// load new data
+		}
 	}
 }

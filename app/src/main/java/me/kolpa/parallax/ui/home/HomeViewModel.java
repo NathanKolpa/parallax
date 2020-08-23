@@ -42,9 +42,7 @@ public class HomeViewModel extends ViewModel
 		return homeFeedInteractor.getHomeFeed()
 				.map(postViewEntityMapper::mapManyViewEntity)
 				.observeOn(AndroidSchedulers.mainThread())
-				.subscribe(postViewEntities -> {
-					postsLiveData.setValue(postViewEntities);
-				});
+				.subscribe(postsLiveData::setValue);
 	}
 
 

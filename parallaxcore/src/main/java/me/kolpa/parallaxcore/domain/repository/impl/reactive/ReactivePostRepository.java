@@ -22,7 +22,6 @@ public class ReactivePostRepository implements PostRepository
 	private final PostService service;
 
 	private Set<String> homeFeedKeys = new HashSet<>();
-	private boolean hasFetchedHomeFeed = false;
 
 	public ReactivePostRepository(PostService service, ReactiveStore<String, Post> store)
 	{
@@ -30,11 +29,6 @@ public class ReactivePostRepository implements PostRepository
 		this.store = store;
 	}
 
-	@Override
-	public boolean hasFetchedHomeFeed()
-	{
-		return hasFetchedHomeFeed;
-	}
 
 	@Override
 	public Flowable<List<Post>> getHomeFeed()
@@ -55,10 +49,10 @@ public class ReactivePostRepository implements PostRepository
 						homeFeedKeys.add(post.getId());
 
 					store.addAll(posts);
-					hasFetchedHomeFeed = true;
 				})
 				.doOnError(throwable -> {
 
 				}));
 	}
+
 }

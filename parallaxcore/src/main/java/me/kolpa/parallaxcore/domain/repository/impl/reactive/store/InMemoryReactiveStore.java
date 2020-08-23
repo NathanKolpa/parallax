@@ -74,6 +74,12 @@ public class InMemoryReactiveStore<Key, Value> implements ReactiveStore<Key, Val
 	}
 
 	@Override
+	public List<Value> getValues()
+	{
+		return new ArrayList<>(internalValues.values());
+	}
+
+	@Override
 	public Observable<Value> getValue(Key key)
 	{
 		return Observable.defer(() -> createAndStoreNewSubjectForKey(key));

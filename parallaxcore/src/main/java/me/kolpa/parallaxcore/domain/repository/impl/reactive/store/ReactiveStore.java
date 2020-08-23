@@ -13,6 +13,7 @@ public interface ReactiveStore<Key, Value>
 
 	boolean hasValue(Key key);
 
+	List<Value> getValues();
 	Observable<Value> getValue(Key key);
 	Observable<List<Value>> getAll();
 }

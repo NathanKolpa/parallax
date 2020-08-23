@@ -27,6 +27,8 @@ public class HomeFragment extends Fragment
 		View inflate = inflater.inflate(R.layout.fragment_home, container, false);
 		FeedFragment feedContainer = (FeedFragment) getChildFragmentManager().findFragmentById(R.id.home_feed_fragment);
 
+		homeFeedInteractor.setPage(0);
+
 		HomeViewModel homeViewModel = new HomeViewModel(homeFeedInteractor, new PostViewEntityMapper());// TODO: DI
 		homeViewModel.getPostsLiveData().observe(getViewLifecycleOwner(), feedContainer::setPosts);
 
